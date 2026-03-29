@@ -5,11 +5,11 @@
 </script>
 
 <svelte:head>
-	<title>New Product - Boilerworks</title>
+	<title>New Item - Boilerworks</title>
 </svelte:head>
 
 <div class="mx-auto max-w-2xl">
-	<h1 class="mb-6 text-2xl font-bold">New Product</h1>
+	<h1 class="mb-6 text-2xl font-bold">New Item</h1>
 
 	{#if form?.error}
 		<div class="bg-bw-danger/10 text-bw-danger mb-4 rounded p-3 text-sm">{form.error}</div>
@@ -59,9 +59,9 @@
 
 		<div class="flex gap-3">
 			<button type="submit" class="bg-bw-accent hover:bg-bw-accent-hover rounded px-4 py-2 text-sm font-medium text-white">
-				Create Product
+				Create Item
 			</button>
-			<a href="/products" class="text-bw-text-muted hover:text-bw-text rounded px-4 py-2 text-sm">Cancel</a>
+			<a href="/items" class="text-bw-text-muted hover:text-bw-text rounded px-4 py-2 text-sm">Cancel</a>
 		</div>
 	</form>
 </div>

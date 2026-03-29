@@ -20,10 +20,10 @@
 					Dashboard
 				</a>
 				<a
-					href="/products"
+					href="/items"
 					class="hover:bg-bw-surface-hover text-bw-text-muted hover:text-bw-text block rounded px-3 py-2 text-sm"
 				>
-					Products
+					Items
 				</a>
 				<a
 					href="/categories"

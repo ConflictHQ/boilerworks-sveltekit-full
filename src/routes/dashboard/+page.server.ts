@@ -1,17 +1,17 @@
 import type { PageServerLoad } from './$types';
 import { requireAuth } from '$lib/server/permissions/index.js';
 import { db } from '$lib/server/db/index.js';
-import { products, categories, formDefinitions, workflowInstances } from '$lib/server/db/schema.js';
+import { items, categories, formDefinitions, workflowInstances } from '$lib/server/db/schema.js';
 import { isNull } from 'drizzle-orm';
 import { sql } from 'drizzle-orm';
 
 export const load: PageServerLoad = async ({ locals }) => {
 	requireAuth(locals.user);
 
-	const [productCount] = await db
+	const [itemCount] = await db
 		.select({ count: sql<number>`count(*)` })
-		.from(products)
-		.where(isNull(products.deletedAt));
+		.from(items)
+		.where(isNull(items.deletedAt));
 
 	const [categoryCount] = await db
 		.select({ count: sql<number>`count(*)` })
@@ -30,7 +30,7 @@ export const load: PageServerLoad = async ({ locals }) => {
 
 	return {
 		stats: {
-			products: Number(productCount.count),
+			items: Number(itemCount.count),
 			categories: Number(categoryCount.count),
 			forms: Number(formCount.count),
 			workflows: Number(workflowCount.count)

@@ -58,12 +58,12 @@ src/
     register/     # Registration page
     logout/       # Logout action
     dashboard/    # Dashboard with stats
-    products/     # Products CRUD
+    items/     # Items CRUD
     categories/   # Categories CRUD
     forms/        # Form definitions + submissions
     workflows/    # Workflow definitions + instances + transitions
     admin/        # Superuser-only admin panel (users, groups)
-    api/          # REST API endpoints (health, products, categories)
+    api/          # REST API endpoints (health, items, categories)
 ```
 
 ## Rules

@@ -8,7 +8,7 @@
 - **Drizzle ORM + PostgreSQL** -- Type-safe queries, UUID PKs, soft deletes
 - **Session auth** -- httpOnly cookies, SHA-256 token hashing, argon2 passwords
 - **Group-based permissions** -- Users belong to groups, groups have permissions
-- **Products + Categories CRUD** -- Full create/read/update/soft-delete
+- **Items + Categories CRUD** -- Full create/read/update/soft-delete
 - **Forms engine** -- JSON Schema-driven form definitions with validation
 - **Workflow engine** -- State machine with transitions and audit log
 - **Admin panel** -- Superuser-gated user and group management

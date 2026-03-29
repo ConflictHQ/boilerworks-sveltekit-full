@@ -90,7 +90,7 @@ export const userGroups = pgTable(
 	(table) => [uniqueIndex('user_group_unique').on(table.userId, table.groupId)]
 );
 
-// ── Products ───────────────────────────────────────────────────────
+// ── Items ───────────────────────────────────────────────────────
 
 export const categories = pgTable('categories', {
 	...baseColumns(),
@@ -99,7 +99,7 @@ export const categories = pgTable('categories', {
 	description: text('description')
 });
 
-export const products = pgTable('products', {
+export const items = pgTable('items', {
 	...baseColumns(),
 	name: text('name').notNull(),
 	slug: text('slug').notNull().unique(),

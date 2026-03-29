@@ -17,10 +17,10 @@ async function seed() {
 
 	// Create permissions
 	const permissionCodes = [
-		'products.view',
-		'products.create',
-		'products.edit',
-		'products.delete',
+		'items.view',
+		'items.create',
+		'items.edit',
+		'items.delete',
 		'categories.view',
 		'categories.create',
 		'categories.edit',
@@ -60,7 +60,7 @@ async function seed() {
 		.insert(schema.groups)
 		.values([
 			{ name: 'Administrators', description: 'Full access to all resources' },
-			{ name: 'Editors', description: 'Can manage products, categories, forms' },
+			{ name: 'Editors', description: 'Can manage items, categories, forms' },
 			{ name: 'Viewers', description: 'Read-only access' }
 		])
 		.onConflictDoNothing()
@@ -128,10 +128,10 @@ async function seed() {
 		.returning();
 	console.log('  Categories created');
 
-	// Create sample products
+	// Create sample items
 	if (catElectronics && catClothing) {
 		await db
-			.insert(schema.products)
+			.insert(schema.items)
 			.values([
 				{
 					name: 'Wireless Headphones',
@@ -159,7 +159,7 @@ async function seed() {
 				}
 			])
 			.onConflictDoNothing();
-		console.log('  Products created');
+		console.log('  Items created');
 	}
 
 	// Create sample form definition

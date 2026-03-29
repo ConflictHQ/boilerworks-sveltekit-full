@@ -13,13 +13,13 @@ function makeUser(overrides: Partial<SessionUser> = {}): SessionUser {
 	};
 }
 
-describe('product CRUD permission gating', () => {
+describe('item CRUD permission gating', () => {
 	const editor = makeUser({
-		permissions: ['products.view', 'products.create', 'products.edit']
+		permissions: ['items.view', 'items.create', 'items.edit']
 	});
 
 	const viewer = makeUser({
-		permissions: ['products.view']
+		permissions: ['items.view']
 	});
 
 	const admin = makeUser({
@@ -27,46 +27,46 @@ describe('product CRUD permission gating', () => {
 		permissions: []
 	});
 
-	it('editor can view products', () => {
-		expect(hasPermission(editor, 'products.view')).toBe(true);
+	it('editor can view items', () => {
+		expect(hasPermission(editor, 'items.view')).toBe(true);
 	});
 
-	it('editor can create products', () => {
-		expect(hasPermission(editor, 'products.create')).toBe(true);
+	it('editor can create items', () => {
+		expect(hasPermission(editor, 'items.create')).toBe(true);
 	});
 
-	it('editor can edit products', () => {
-		expect(hasPermission(editor, 'products.edit')).toBe(true);
+	it('editor can edit items', () => {
+		expect(hasPermission(editor, 'items.edit')).toBe(true);
 	});
 
-	it('editor cannot delete products', () => {
-		expect(hasPermission(editor, 'products.delete')).toBe(false);
+	it('editor cannot delete items', () => {
+		expect(hasPermission(editor, 'items.delete')).toBe(false);
 	});
 
 	it('viewer can only view', () => {
-		expect(hasPermission(viewer, 'products.view')).toBe(true);
-		expect(hasPermission(viewer, 'products.create')).toBe(false);
-		expect(hasPermission(viewer, 'products.edit')).toBe(false);
-		expect(hasPermission(viewer, 'products.delete')).toBe(false);
+		expect(hasPermission(viewer, 'items.view')).toBe(true);
+		expect(hasPermission(viewer, 'items.create')).toBe(false);
+		expect(hasPermission(viewer, 'items.edit')).toBe(false);
+		expect(hasPermission(viewer, 'items.delete')).toBe(false);
 	});
 
 	it('admin can do everything', () => {
-		expect(hasPermission(admin, 'products.view')).toBe(true);
-		expect(hasPermission(admin, 'products.create')).toBe(true);
-		expect(hasPermission(admin, 'products.edit')).toBe(true);
-		expect(hasPermission(admin, 'products.delete')).toBe(true);
+		expect(hasPermission(admin, 'items.view')).toBe(true);
+		expect(hasPermission(admin, 'items.create')).toBe(true);
+		expect(hasPermission(admin, 'items.edit')).toBe(true);
+		expect(hasPermission(admin, 'items.delete')).toBe(true);
 	});
 });
 
-describe('product form validation', () => {
+describe('item form validation', () => {
 	it('rejects empty name', () => {
 		const name = '';
-		const slug = 'my-product';
+		const slug = 'my-item';
 		expect(!name || !slug).toBe(true);
 	});
 
 	it('rejects empty slug', () => {
-		const name = 'My Product';
+		const name = 'My Item';
 		const slug = '';
 		expect(!name || !slug).toBe(true);
 	});

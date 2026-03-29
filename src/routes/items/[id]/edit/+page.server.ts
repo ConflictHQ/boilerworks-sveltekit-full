@@ -2,19 +2,19 @@ import { error, fail, redirect } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 import { requirePermission } from '$lib/server/permissions/index.js';
 import { db } from '$lib/server/db/index.js';
-import { products, categories } from '$lib/server/db/schema.js';
+import { items, categories } from '$lib/server/db/schema.js';
 import { eq, isNull, and } from 'drizzle-orm';
 
 export const load: PageServerLoad = async ({ locals, params }) => {
-	requirePermission(locals.user, 'products.edit');
+	requirePermission(locals.user, 'items.edit');
 
 	const result = await db
 		.select()
-		.from(products)
-		.where(and(eq(products.id, params.id), isNull(products.deletedAt)))
+		.from(items)
+		.where(and(eq(items.id, params.id), isNull(items.deletedAt)))
 		.limit(1);
 
-	if (result.length === 0) throw error(404, 'Product not found');
+	if (result.length === 0) throw error(404, 'Item not found');
 
 	const cats = await db
 		.select({ id: categories.id, name: categories.name })
@@ -22,12 +22,12 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 		.where(isNull(categories.deletedAt))
 		.orderBy(categories.name);
 
-	return { product: result[0], categories: cats };
+	return { item: result[0], categories: cats };
 };
 
 export const actions: Actions = {
 	default: async ({ request, locals, params }) => {
-		const user = requirePermission(locals.user, 'products.edit');
+		const user = requirePermission(locals.user, 'items.edit');
 		const formData = await request.formData();
 
 		const name = (formData.get('name') as string)?.trim();
@@ -45,11 +45,11 @@ export const actions: Actions = {
 
 		try {
 			await db
-				.update(products)
+				.update(items)
 				.set({ name, slug, description, price, categoryId, isPublished, updatedAt: new Date(), updatedBy: user.id })
-				.where(eq(products.id, params.id));
+				.where(eq(items.id, params.id));
 
-			throw redirect(303, `/products/${params.id}`);
+			throw redirect(303, `/items/${params.id}`);
 		} catch (err) {
 			if (err instanceof Error && err.message.includes('unique')) {
 				return fail(400, { error: 'Slug already in use' });
