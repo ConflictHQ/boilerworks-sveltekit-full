@@ -36,7 +36,7 @@ npm run db:seed
 npm run dev
 ```
 
-Open http://localhost:5173 and sign in:
+Open http://localhost:3000 and sign in:
 
 | Account | Email | Password |
 |---------|-------|----------|
@@ -65,7 +65,7 @@ SvelteKit (Node.js / adapter-node)
   |-- src/lib/server/   Auth, DB, permissions, forms, workflow
   |-- Drizzle ORM       PostgreSQL via postgres.js
   |-- Tailwind CSS 4    Dark admin theme
-  +-- Docker Compose    PostgreSQL on port 5448
+  +-- Docker Compose    PostgreSQL on port 5432
 ```
 
 ## License

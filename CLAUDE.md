@@ -24,9 +24,9 @@ Read it before writing any code.
 
 | Service | URL |
 |---------|-----|
-| App | http://localhost:5173 |
-| Health | http://localhost:5173/api/health |
-| Postgres | localhost:5448 |
+| App | http://localhost:3000 |
+| Health | http://localhost:3000/api/health |
+| Postgres | localhost:5432 |
 
 ## Commands
 
