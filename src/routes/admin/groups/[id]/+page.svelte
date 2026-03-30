@@ -23,5 +23,7 @@
 		{/each}
 	</div>
 
-	<a href="/admin/groups" class="text-bw-text-muted hover:text-bw-text mt-4 inline-block text-sm">&larr; Back to Groups</a>
+	<a href="/admin/groups" class="text-bw-text-muted hover:text-bw-text mt-4 inline-block text-sm"
+		>&larr; Back to Groups</a
+	>
 </div>

@@ -28,14 +28,20 @@
 					<td class="text-bw-text-muted px-4 py-3 text-sm">{user.email}</td>
 					<td class="px-4 py-3 text-sm">
 						{#if user.isActive}
-							<span class="bg-bw-success/10 text-bw-success rounded px-2 py-0.5 text-xs">Active</span>
+							<span class="bg-bw-success/10 text-bw-success rounded px-2 py-0.5 text-xs"
+								>Active</span
+							>
 						{:else}
-							<span class="bg-bw-danger/10 text-bw-danger rounded px-2 py-0.5 text-xs">Inactive</span>
+							<span class="bg-bw-danger/10 text-bw-danger rounded px-2 py-0.5 text-xs"
+								>Inactive</span
+							>
 						{/if}
 					</td>
 					<td class="px-4 py-3 text-sm">
 						{#if user.isSuperuser}
-							<span class="bg-bw-warning/10 text-bw-warning rounded px-2 py-0.5 text-xs">Superuser</span>
+							<span class="bg-bw-warning/10 text-bw-warning rounded px-2 py-0.5 text-xs"
+								>Superuser</span
+							>
 						{:else}
 							<span class="text-bw-text-muted text-xs">User</span>
 						{/if}

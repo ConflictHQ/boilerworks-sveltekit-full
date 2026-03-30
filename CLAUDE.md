@@ -22,11 +22,11 @@ Read it before writing any code.
 
 ## Quick Reference
 
-| Service | URL |
-|---------|-----|
-| App | http://localhost:3000 |
-| Health | http://localhost:3000/api/health |
-| Postgres | localhost:5432 |
+| Service  | URL                              |
+| -------- | -------------------------------- |
+| App      | http://localhost:3000            |
+| Health   | http://localhost:3000/api/health |
+| Postgres | localhost:5432                   |
 
 ## Commands
 

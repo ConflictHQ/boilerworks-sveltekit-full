@@ -10,7 +10,10 @@
 
 <div class="mb-6 flex items-center justify-between">
 	<h1 class="text-2xl font-bold">Workflows</h1>
-	<a href="/workflows/new" class="bg-bw-accent hover:bg-bw-accent-hover rounded px-4 py-2 text-sm font-medium text-white">
+	<a
+		href="/workflows/new"
+		class="bg-bw-accent hover:bg-bw-accent-hover rounded px-4 py-2 text-sm font-medium text-white"
+	>
 		New Instance
 	</a>
 </div>
@@ -31,12 +34,16 @@
 					<td class="px-4 py-3 text-sm">{def.name}</td>
 					<td class="text-bw-text-muted px-4 py-3 font-mono text-sm">{def.slug}</td>
 					<td class="px-4 py-3 text-sm">
-						<span class="bg-bw-accent/10 text-bw-accent rounded px-2 py-0.5 text-xs">{def.initialState}</span>
+						<span class="bg-bw-accent/10 text-bw-accent rounded px-2 py-0.5 text-xs"
+							>{def.initialState}</span
+						>
 					</td>
 				</tr>
 			{:else}
 				<tr>
-					<td colspan="3" class="text-bw-text-muted px-4 py-8 text-center text-sm">No workflow definitions</td>
+					<td colspan="3" class="text-bw-text-muted px-4 py-8 text-center text-sm"
+						>No workflow definitions</td
+					>
 				</tr>
 			{/each}
 		</tbody>
@@ -60,7 +67,9 @@
 					<td class="text-bw-text-muted px-4 py-3 font-mono text-xs">{inst.id.slice(0, 8)}...</td>
 					<td class="px-4 py-3 text-sm">{inst.definitionName}</td>
 					<td class="px-4 py-3 text-sm">
-						<span class="bg-bw-accent/10 text-bw-accent rounded px-2 py-0.5 text-xs">{inst.currentState}</span>
+						<span class="bg-bw-accent/10 text-bw-accent rounded px-2 py-0.5 text-xs"
+							>{inst.currentState}</span
+						>
 					</td>
 					<td class="px-4 py-3 text-right text-sm">
 						<a href="/workflows/{inst.id}" class="text-bw-accent hover:underline">Manage</a>
@@ -68,7 +77,9 @@
 				</tr>
 			{:else}
 				<tr>
-					<td colspan="4" class="text-bw-text-muted px-4 py-8 text-center text-sm">No workflow instances</td>
+					<td colspan="4" class="text-bw-text-muted px-4 py-8 text-center text-sm"
+						>No workflow instances</td
+					>
 				</tr>
 			{/each}
 		</tbody>

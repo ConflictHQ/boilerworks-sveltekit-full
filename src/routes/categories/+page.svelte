@@ -10,7 +10,10 @@
 
 <div class="mb-6 flex items-center justify-between">
 	<h1 class="text-2xl font-bold">Categories</h1>
-	<a href="/categories/new" class="bg-bw-accent hover:bg-bw-accent-hover rounded px-4 py-2 text-sm font-medium text-white">
+	<a
+		href="/categories/new"
+		class="bg-bw-accent hover:bg-bw-accent-hover rounded px-4 py-2 text-sm font-medium text-white"
+	>
 		New Category
 	</a>
 </div>
@@ -33,12 +36,16 @@
 					<td class="text-bw-text-muted px-4 py-3 text-sm">{category.description ?? '—'}</td>
 					<td class="px-4 py-3 text-right text-sm">
 						<a href="/categories/{category.id}" class="text-bw-accent hover:underline">View</a>
-						<a href="/categories/{category.id}/edit" class="text-bw-accent hover:underline ml-3">Edit</a>
+						<a href="/categories/{category.id}/edit" class="text-bw-accent hover:underline ml-3"
+							>Edit</a
+						>
 					</td>
 				</tr>
 			{:else}
 				<tr>
-					<td colspan="4" class="text-bw-text-muted px-4 py-8 text-center text-sm">No categories yet</td>
+					<td colspan="4" class="text-bw-text-muted px-4 py-8 text-center text-sm"
+						>No categories yet</td
+					>
 				</tr>
 			{/each}
 		</tbody>

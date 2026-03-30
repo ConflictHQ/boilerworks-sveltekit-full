@@ -11,13 +11,20 @@
 <div class="mb-6 flex items-center justify-between">
 	<h1 class="text-2xl font-bold">{data.category.name}</h1>
 	<div class="flex gap-3">
-		<a href="/categories/{data.category.id}/edit"
-			class="bg-bw-accent hover:bg-bw-accent-hover rounded px-4 py-2 text-sm font-medium text-white">
+		<a
+			href="/categories/{data.category.id}/edit"
+			class="bg-bw-accent hover:bg-bw-accent-hover rounded px-4 py-2 text-sm font-medium text-white"
+		>
 			Edit
 		</a>
 		<form method="POST" action="?/delete">
-			<button type="submit" class="bg-bw-danger/10 text-bw-danger hover:bg-bw-danger/20 rounded px-4 py-2 text-sm font-medium"
-				onclick={(e) => { if (!confirm('Are you sure?')) e.preventDefault(); }}>
+			<button
+				type="submit"
+				class="bg-bw-danger/10 text-bw-danger hover:bg-bw-danger/20 rounded px-4 py-2 text-sm font-medium"
+				onclick={(e) => {
+					if (!confirm('Are you sure?')) e.preventDefault();
+				}}
+			>
 				Delete
 			</button>
 		</form>
@@ -37,4 +44,6 @@
 	</dl>
 </div>
 
-<a href="/categories" class="text-bw-text-muted hover:text-bw-text mt-4 inline-block text-sm">&larr; Back to Categories</a>
+<a href="/categories" class="text-bw-text-muted hover:text-bw-text mt-4 inline-block text-sm"
+	>&larr; Back to Categories</a
+>

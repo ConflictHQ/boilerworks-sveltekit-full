@@ -11,12 +11,18 @@
 <h1 class="mb-8 text-2xl font-bold">Admin Panel</h1>
 
 <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
-	<a href="/admin/users" class="bg-bw-surface border-bw-border hover:border-bw-accent rounded-lg border p-6 transition">
+	<a
+		href="/admin/users"
+		class="bg-bw-surface border-bw-border hover:border-bw-accent rounded-lg border p-6 transition"
+	>
 		<div class="text-bw-text-muted text-sm">Users</div>
 		<div class="text-3xl font-bold">{data.stats.users}</div>
 	</a>
 
-	<a href="/admin/groups" class="bg-bw-surface border-bw-border hover:border-bw-accent rounded-lg border p-6 transition">
+	<a
+		href="/admin/groups"
+		class="bg-bw-surface border-bw-border hover:border-bw-accent rounded-lg border p-6 transition"
+	>
 		<div class="text-bw-text-muted text-sm">Groups</div>
 		<div class="text-3xl font-bold">{data.stats.groups}</div>
 	</a>

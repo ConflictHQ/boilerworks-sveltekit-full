@@ -30,7 +30,14 @@ export const actions: Actions = {
 		const isPublished = formData.get('is_published') === 'on';
 
 		if (!name || !slug) {
-			return fail(400, { error: 'Name and slug are required', name, slug, description, price: priceStr, categoryId });
+			return fail(400, {
+				error: 'Name and slug are required',
+				name,
+				slug,
+				description,
+				price: priceStr,
+				categoryId
+			});
 		}
 
 		const price = Math.round(parseFloat(priceStr || '0') * 100);
@@ -53,7 +60,14 @@ export const actions: Actions = {
 			throw redirect(303, `/items/${item.id}`);
 		} catch (err) {
 			if (err instanceof Error && err.message.includes('unique')) {
-				return fail(400, { error: 'Slug already in use', name, slug, description, price: priceStr, categoryId });
+				return fail(400, {
+					error: 'Slug already in use',
+					name,
+					slug,
+					description,
+					price: priceStr,
+					categoryId
+				});
 			}
 			throw err;
 		}

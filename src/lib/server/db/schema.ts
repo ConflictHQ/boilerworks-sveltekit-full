@@ -1,4 +1,13 @@
-import { pgTable, text, timestamp, boolean, uuid, jsonb, integer, uniqueIndex } from 'drizzle-orm/pg-core';
+import {
+	pgTable,
+	text,
+	timestamp,
+	boolean,
+	uuid,
+	jsonb,
+	integer,
+	uniqueIndex
+} from 'drizzle-orm/pg-core';
 import { sql } from 'drizzle-orm';
 
 // ── Base columns (audit trails, soft deletes) ──────────────────────

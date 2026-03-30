@@ -9,10 +9,12 @@
 		format?: string;
 	};
 
-	let schema = $derived(data.form.schema as {
-		properties: Record<string, SchemaProperty>;
-		required?: string[];
-	});
+	let schema = $derived(
+		data.form.schema as {
+			properties: Record<string, SchemaProperty>;
+			required?: string[];
+		}
+	);
 
 	function getFieldErrors(field: string): string[] {
 		if (!form?.errors) return [];
@@ -41,17 +43,29 @@
 				</label>
 
 				{#if spec.type === 'string' && !spec.format}
-					<input type="text" name={field} id={field}
+					<input
+						type="text"
+						name={field}
+						id={field}
 						value={form?.data?.[field] ?? ''}
-						class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none" />
+						class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none"
+					/>
 				{:else if spec.format === 'email'}
-					<input type="email" name={field} id={field}
+					<input
+						type="email"
+						name={field}
+						id={field}
 						value={form?.data?.[field] ?? ''}
-						class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none" />
+						class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none"
+					/>
 				{:else}
-					<input type="text" name={field} id={field}
+					<input
+						type="text"
+						name={field}
+						id={field}
 						value={form?.data?.[field] ?? ''}
-						class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none" />
+						class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none"
+					/>
 				{/if}
 
 				{#each getFieldErrors(field) as err}
@@ -61,10 +75,16 @@
 		{/each}
 
 		<div class="flex gap-3">
-			<button type="submit" class="bg-bw-accent hover:bg-bw-accent-hover rounded px-4 py-2 text-sm font-medium text-white">
+			<button
+				type="submit"
+				class="bg-bw-accent hover:bg-bw-accent-hover rounded px-4 py-2 text-sm font-medium text-white"
+			>
 				Submit
 			</button>
-			<a href="/forms/{data.form.id}" class="text-bw-text-muted hover:text-bw-text rounded px-4 py-2 text-sm">Cancel</a>
+			<a
+				href="/forms/{data.form.id}"
+				class="text-bw-text-muted hover:text-bw-text rounded px-4 py-2 text-sm">Cancel</a
+			>
 		</div>
 	</form>
 </div>

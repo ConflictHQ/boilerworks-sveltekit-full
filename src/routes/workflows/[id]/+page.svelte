@@ -18,7 +18,9 @@
 <div class="bg-bw-surface border-bw-border mb-6 rounded-lg border p-6">
 	<div class="mb-4">
 		<span class="text-bw-text-muted text-sm">Current State:</span>
-		<span class="bg-bw-accent/10 text-bw-accent ml-2 rounded px-3 py-1 text-sm font-medium">{data.instance.currentState}</span>
+		<span class="bg-bw-accent/10 text-bw-accent ml-2 rounded px-3 py-1 text-sm font-medium"
+			>{data.instance.currentState}</span
+		>
 	</div>
 
 	{#if data.transitions.length > 0}
@@ -26,8 +28,10 @@
 			{#each data.transitions as transition}
 				<form method="POST" action="?/transition" class="inline">
 					<input type="hidden" name="to_state" value={transition.to} />
-					<button type="submit"
-						class="bg-bw-surface-hover border-bw-border hover:border-bw-accent rounded border px-4 py-2 text-sm transition">
+					<button
+						type="submit"
+						class="bg-bw-surface-hover border-bw-border hover:border-bw-accent rounded border px-4 py-2 text-sm transition"
+					>
 						{transition.label}
 					</button>
 				</form>
@@ -55,17 +59,25 @@
 						<span class="bg-bw-surface-hover rounded px-2 py-0.5 text-xs">{log.fromState}</span>
 					</td>
 					<td class="px-4 py-3 text-sm">
-						<span class="bg-bw-accent/10 text-bw-accent rounded px-2 py-0.5 text-xs">{log.toState}</span>
+						<span class="bg-bw-accent/10 text-bw-accent rounded px-2 py-0.5 text-xs"
+							>{log.toState}</span
+						>
 					</td>
-					<td class="text-bw-text-muted px-4 py-3 text-sm">{new Date(log.createdAt).toLocaleString()}</td>
+					<td class="text-bw-text-muted px-4 py-3 text-sm"
+						>{new Date(log.createdAt).toLocaleString()}</td
+					>
 				</tr>
 			{:else}
 				<tr>
-					<td colspan="3" class="text-bw-text-muted px-4 py-8 text-center text-sm">No transitions yet</td>
+					<td colspan="3" class="text-bw-text-muted px-4 py-8 text-center text-sm"
+						>No transitions yet</td
+					>
 				</tr>
 			{/each}
 		</tbody>
 	</table>
 </div>
 
-<a href="/workflows" class="text-bw-text-muted hover:text-bw-text mt-4 inline-block text-sm">&larr; Back to Workflows</a>
+<a href="/workflows" class="text-bw-text-muted hover:text-bw-text mt-4 inline-block text-sm"
+	>&larr; Back to Workflows</a
+>

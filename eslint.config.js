@@ -13,9 +13,9 @@ export default [
 		languageOptions: {
 			parser: svelteParser,
 			parserOptions: {
-				parser: tsParser,
-			},
-		},
+				parser: tsParser
+			}
+		}
 	},
 	eslintConfigPrettier,
 	{
@@ -23,7 +23,7 @@ export default [
 			'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
 			'svelte/no-at-html-tags': 'off',
 			'svelte/no-navigation-without-resolve': 'off',
-			'svelte/require-each-key': 'warn',
+			'svelte/require-each-key': 'warn'
 		}
 	}
 ];

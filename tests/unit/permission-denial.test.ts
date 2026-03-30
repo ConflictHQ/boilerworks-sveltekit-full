@@ -1,5 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { requirePermission, requireSuperuser, hasPermission } from '../../src/lib/server/permissions/index.js';
+import {
+	requirePermission,
+	requireSuperuser,
+	hasPermission
+} from '../../src/lib/server/permissions/index.js';
 import type { SessionUser } from '../../src/lib/server/auth/index.js';
 
 function makeUser(overrides: Partial<SessionUser> = {}): SessionUser {

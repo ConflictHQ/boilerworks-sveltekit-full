@@ -72,10 +72,7 @@
 				<div class="text-bw-text text-sm">{data.user.displayName}</div>
 				<div class="text-bw-text-muted text-xs">{data.user.email}</div>
 				<form method="POST" action="/logout" class="mt-2">
-					<button
-						type="submit"
-						class="text-bw-text-muted hover:text-bw-danger text-xs"
-					>
+					<button type="submit" class="text-bw-text-muted hover:text-bw-danger text-xs">
 						Sign out
 					</button>
 				</form>

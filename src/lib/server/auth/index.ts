@@ -1,5 +1,11 @@
 import { db } from '$lib/server/db/index.js';
-import { sessions, users, userGroups, groupPermissions, permissions } from '$lib/server/db/schema.js';
+import {
+	sessions,
+	users,
+	userGroups,
+	groupPermissions,
+	permissions
+} from '$lib/server/db/schema.js';
 import { eq, and, isNull, gt } from 'drizzle-orm';
 import { hash, verify } from '@node-rs/argon2';
 import crypto from 'node:crypto';

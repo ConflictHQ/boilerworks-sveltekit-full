@@ -10,7 +10,10 @@
 
 <div class="mb-6 flex items-center justify-between">
 	<h1 class="text-2xl font-bold">Form Definitions</h1>
-	<a href="/forms/new" class="bg-bw-accent hover:bg-bw-accent-hover rounded px-4 py-2 text-sm font-medium text-white">
+	<a
+		href="/forms/new"
+		class="bg-bw-accent hover:bg-bw-accent-hover rounded px-4 py-2 text-sm font-medium text-white"
+	>
 		New Form
 	</a>
 </div>
@@ -32,9 +35,12 @@
 					<td class="text-bw-text-muted px-4 py-3 font-mono text-sm">{form.slug}</td>
 					<td class="px-4 py-3 text-sm">
 						{#if form.isPublished}
-							<span class="bg-bw-success/10 text-bw-success rounded px-2 py-0.5 text-xs">Published</span>
+							<span class="bg-bw-success/10 text-bw-success rounded px-2 py-0.5 text-xs"
+								>Published</span
+							>
 						{:else}
-							<span class="bg-bw-warning/10 text-bw-warning rounded px-2 py-0.5 text-xs">Draft</span>
+							<span class="bg-bw-warning/10 text-bw-warning rounded px-2 py-0.5 text-xs">Draft</span
+							>
 						{/if}
 					</td>
 					<td class="px-4 py-3 text-right text-sm">

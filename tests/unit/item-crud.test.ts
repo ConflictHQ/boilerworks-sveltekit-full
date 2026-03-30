@@ -92,6 +92,6 @@ describe('item form validation', () => {
 	it('handles is_published checkbox', () => {
 		expect('on' === 'on').toBe(true);
 		expect(null === 'on').toBe(false);
-		expect('' === 'on').toBe(false);
+		expect(('' as string) === 'on').toBe(false);
 	});
 });

@@ -15,13 +15,20 @@
 <div class="mb-6 flex items-center justify-between">
 	<h1 class="text-2xl font-bold">{data.item.name}</h1>
 	<div class="flex gap-3">
-		<a href="/items/{data.item.id}/edit"
-			class="bg-bw-accent hover:bg-bw-accent-hover rounded px-4 py-2 text-sm font-medium text-white">
+		<a
+			href="/items/{data.item.id}/edit"
+			class="bg-bw-accent hover:bg-bw-accent-hover rounded px-4 py-2 text-sm font-medium text-white"
+		>
 			Edit
 		</a>
 		<form method="POST" action="?/delete">
-			<button type="submit" class="bg-bw-danger/10 text-bw-danger hover:bg-bw-danger/20 rounded px-4 py-2 text-sm font-medium"
-				onclick={(e) => { if (!confirm('Are you sure?')) e.preventDefault(); }}>
+			<button
+				type="submit"
+				class="bg-bw-danger/10 text-bw-danger hover:bg-bw-danger/20 rounded px-4 py-2 text-sm font-medium"
+				onclick={(e) => {
+					if (!confirm('Are you sure?')) e.preventDefault();
+				}}
+			>
 				Delete
 			</button>
 		</form>
@@ -46,7 +53,8 @@
 			<dt class="text-bw-text-muted text-sm">Status</dt>
 			<dd>
 				{#if data.item.isPublished}
-					<span class="bg-bw-success/10 text-bw-success rounded px-2 py-0.5 text-xs">Published</span>
+					<span class="bg-bw-success/10 text-bw-success rounded px-2 py-0.5 text-xs">Published</span
+					>
 				{:else}
 					<span class="bg-bw-warning/10 text-bw-warning rounded px-2 py-0.5 text-xs">Draft</span>
 				{/if}
@@ -59,4 +67,6 @@
 	</dl>
 </div>
 
-<a href="/items" class="text-bw-text-muted hover:text-bw-text mt-4 inline-block text-sm">&larr; Back to Items</a>
+<a href="/items" class="text-bw-text-muted hover:text-bw-text mt-4 inline-block text-sm"
+	>&larr; Back to Items</a
+>

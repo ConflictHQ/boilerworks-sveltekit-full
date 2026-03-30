@@ -17,9 +17,7 @@ export const load: PageServerLoad = async ({ locals }) => {
 		.from(groups)
 		.where(isNull(groups.deletedAt));
 
-	const [sessionCount] = await db
-		.select({ count: sql<number>`count(*)` })
-		.from(sessions);
+	const [sessionCount] = await db.select({ count: sql<number>`count(*)` }).from(sessions);
 
 	return {
 		stats: {

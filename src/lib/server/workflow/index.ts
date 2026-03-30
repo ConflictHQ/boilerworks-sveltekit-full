@@ -1,9 +1,5 @@
 import { db } from '$lib/server/db/index.js';
-import {
-	workflowDefinitions,
-	workflowInstances,
-	transitionLogs
-} from '$lib/server/db/schema.js';
+import { workflowDefinitions, workflowInstances, transitionLogs } from '$lib/server/db/schema.js';
 import { eq, isNull, and } from 'drizzle-orm';
 
 type WorkflowStates = Record<
@@ -14,10 +10,7 @@ type WorkflowStates = Record<
 >;
 
 export async function getWorkflowDefinitions() {
-	return db
-		.select()
-		.from(workflowDefinitions)
-		.where(isNull(workflowDefinitions.deletedAt));
+	return db.select().from(workflowDefinitions).where(isNull(workflowDefinitions.deletedAt));
 }
 
 export async function getWorkflowDefinitionById(id: string) {

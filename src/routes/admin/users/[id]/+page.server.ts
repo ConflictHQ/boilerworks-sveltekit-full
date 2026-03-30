@@ -50,7 +50,13 @@ export const actions: Actions = {
 
 		await db
 			.update(users)
-			.set({ displayName, isActive, isSuperuser, updatedAt: new Date(), updatedBy: locals.user!.id })
+			.set({
+				displayName,
+				isActive,
+				isSuperuser,
+				updatedAt: new Date(),
+				updatedBy: locals.user!.id
+			})
 			.where(eq(users.id, params.id));
 
 		// Update group memberships

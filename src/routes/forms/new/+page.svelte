@@ -3,14 +3,18 @@
 
 	let { form } = $props<{ form: ActionData }>();
 
-	const defaultSchema = JSON.stringify({
-		type: 'object',
-		required: ['name', 'email'],
-		properties: {
-			name: { type: 'string', title: 'Name' },
-			email: { type: 'string', format: 'email', title: 'Email' }
-		}
-	}, null, 2);
+	const defaultSchema = JSON.stringify(
+		{
+			type: 'object',
+			required: ['name', 'email'],
+			properties: {
+				name: { type: 'string', title: 'Name' },
+				email: { type: 'string', format: 'email', title: 'Email' }
+			}
+		},
+		null,
+		2
+	);
 </script>
 
 <svelte:head>
@@ -27,28 +31,49 @@
 	<form method="POST" class="bg-bw-surface border-bw-border space-y-4 rounded-lg border p-6">
 		<div>
 			<label for="name" class="text-bw-text-muted mb-1 block text-sm">Name</label>
-			<input type="text" name="name" id="name" required value={form?.name ?? ''}
-				class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none" />
+			<input
+				type="text"
+				name="name"
+				id="name"
+				required
+				value={form?.name ?? ''}
+				class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none"
+			/>
 		</div>
 
 		<div>
 			<label for="slug" class="text-bw-text-muted mb-1 block text-sm">Slug</label>
-			<input type="text" name="slug" id="slug" required value={form?.slug ?? ''}
-				class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none" />
+			<input
+				type="text"
+				name="slug"
+				id="slug"
+				required
+				value={form?.slug ?? ''}
+				class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none"
+			/>
 		</div>
 
 		<div>
 			<label for="description" class="text-bw-text-muted mb-1 block text-sm">Description</label>
-			<textarea name="description" id="description" rows="2"
+			<textarea
+				name="description"
+				id="description"
+				rows="2"
 				class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none"
-			>{form?.description ?? ''}</textarea>
+				>{form?.description ?? ''}</textarea
+			>
 		</div>
 
 		<div>
 			<label for="schema" class="text-bw-text-muted mb-1 block text-sm">JSON Schema</label>
-			<textarea name="schema" id="schema" rows="12" required
+			<textarea
+				name="schema"
+				id="schema"
+				rows="12"
+				required
 				class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 font-mono text-sm focus:outline-none"
-			>{form?.schema ?? defaultSchema}</textarea>
+				>{form?.schema ?? defaultSchema}</textarea
+			>
 		</div>
 
 		<div class="flex items-center gap-2">
@@ -57,10 +82,15 @@
 		</div>
 
 		<div class="flex gap-3">
-			<button type="submit" class="bg-bw-accent hover:bg-bw-accent-hover rounded px-4 py-2 text-sm font-medium text-white">
+			<button
+				type="submit"
+				class="bg-bw-accent hover:bg-bw-accent-hover rounded px-4 py-2 text-sm font-medium text-white"
+			>
 				Create Form
 			</button>
-			<a href="/forms" class="text-bw-text-muted hover:text-bw-text rounded px-4 py-2 text-sm">Cancel</a>
+			<a href="/forms" class="text-bw-text-muted hover:text-bw-text rounded px-4 py-2 text-sm"
+				>Cancel</a
+			>
 		</div>
 	</form>
 </div>

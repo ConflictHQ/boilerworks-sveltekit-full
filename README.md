@@ -38,24 +38,24 @@ npm run dev
 
 Open http://localhost:3000 and sign in:
 
-| Account | Email | Password |
-|---------|-------|----------|
+| Account           | Email                 | Password |
+| ----------------- | --------------------- | -------- |
 | Admin (superuser) | admin@boilerworks.dev | admin123 |
-| Demo (regular) | demo@boilerworks.dev | demo123 |
+| Demo (regular)    | demo@boilerworks.dev  | demo123  |
 
 ## Commands
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run test` | Run unit tests (Vitest) |
-| `npm run test:e2e` | Run E2E tests (Playwright) |
-| `npm run lint` | ESLint + Prettier check |
-| `npm run format` | Auto-format with Prettier |
-| `npm run check` | TypeScript + Svelte type checking |
-| `npm run db:push` | Push Drizzle schema to database |
-| `npm run db:seed` | Seed database with sample data |
+| Command            | Description                       |
+| ------------------ | --------------------------------- |
+| `npm run dev`      | Start development server          |
+| `npm run build`    | Build for production              |
+| `npm run test`     | Run unit tests (Vitest)           |
+| `npm run test:e2e` | Run E2E tests (Playwright)        |
+| `npm run lint`     | ESLint + Prettier check           |
+| `npm run format`   | Auto-format with Prettier         |
+| `npm run check`    | TypeScript + Svelte type checking |
+| `npm run db:push`  | Push Drizzle schema to database   |
+| `npm run db:seed`  | Seed database with sample data    |
 
 ## Architecture
 

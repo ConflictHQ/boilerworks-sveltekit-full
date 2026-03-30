@@ -35,10 +35,7 @@ export const actions: Actions = {
 			}
 		}
 
-		const errors = validateFormData(
-			schema as Parameters<typeof validateFormData>[0],
-			data
-		);
+		const errors = validateFormData(schema as Parameters<typeof validateFormData>[0], data);
 
 		if (errors.length > 0) {
 			return fail(400, { errors, data });

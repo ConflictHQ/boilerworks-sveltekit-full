@@ -18,33 +18,59 @@
 	<form method="POST" class="bg-bw-surface border-bw-border space-y-4 rounded-lg border p-6">
 		<div>
 			<label for="name" class="text-bw-text-muted mb-1 block text-sm">Name</label>
-			<input type="text" name="name" id="name" required value={form?.name ?? ''}
-				class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none" />
+			<input
+				type="text"
+				name="name"
+				id="name"
+				required
+				value={form?.name ?? ''}
+				class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none"
+			/>
 		</div>
 
 		<div>
 			<label for="slug" class="text-bw-text-muted mb-1 block text-sm">Slug</label>
-			<input type="text" name="slug" id="slug" required value={form?.slug ?? ''}
-				class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none" />
+			<input
+				type="text"
+				name="slug"
+				id="slug"
+				required
+				value={form?.slug ?? ''}
+				class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none"
+			/>
 		</div>
 
 		<div>
 			<label for="description" class="text-bw-text-muted mb-1 block text-sm">Description</label>
-			<textarea name="description" id="description" rows="3"
+			<textarea
+				name="description"
+				id="description"
+				rows="3"
 				class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none"
-			>{form?.description ?? ''}</textarea>
+				>{form?.description ?? ''}</textarea
+			>
 		</div>
 
 		<div>
 			<label for="price" class="text-bw-text-muted mb-1 block text-sm">Price ($)</label>
-			<input type="number" name="price" id="price" step="0.01" min="0" value={form?.price ?? '0.00'}
-				class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none" />
+			<input
+				type="number"
+				name="price"
+				id="price"
+				step="0.01"
+				min="0"
+				value={form?.price ?? '0.00'}
+				class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none"
+			/>
 		</div>
 
 		<div>
 			<label for="category_id" class="text-bw-text-muted mb-1 block text-sm">Category</label>
-			<select name="category_id" id="category_id"
-				class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none">
+			<select
+				name="category_id"
+				id="category_id"
+				class="bg-bw-bg border-bw-border text-bw-text focus:border-bw-accent w-full rounded border px-3 py-2 focus:outline-none"
+			>
 				<option value="">— None —</option>
 				{#each data.categories as cat}
 					<option value={cat.id} selected={form?.categoryId === cat.id}>{cat.name}</option>
@@ -58,10 +84,15 @@
 		</div>
 
 		<div class="flex gap-3">
-			<button type="submit" class="bg-bw-accent hover:bg-bw-accent-hover rounded px-4 py-2 text-sm font-medium text-white">
+			<button
+				type="submit"
+				class="bg-bw-accent hover:bg-bw-accent-hover rounded px-4 py-2 text-sm font-medium text-white"
+			>
 				Create Item
 			</button>
-			<a href="/items" class="text-bw-text-muted hover:text-bw-text rounded px-4 py-2 text-sm">Cancel</a>
+			<a href="/items" class="text-bw-text-muted hover:text-bw-text rounded px-4 py-2 text-sm"
+				>Cancel</a
+			>
 		</div>
 	</form>
 </div>

@@ -41,9 +41,12 @@
 					<td class="px-4 py-3 text-sm">${formatPrice(item.price)}</td>
 					<td class="px-4 py-3 text-sm">
 						{#if item.isPublished}
-							<span class="bg-bw-success/10 text-bw-success rounded px-2 py-0.5 text-xs">Published</span>
+							<span class="bg-bw-success/10 text-bw-success rounded px-2 py-0.5 text-xs"
+								>Published</span
+							>
 						{:else}
-							<span class="bg-bw-warning/10 text-bw-warning rounded px-2 py-0.5 text-xs">Draft</span>
+							<span class="bg-bw-warning/10 text-bw-warning rounded px-2 py-0.5 text-xs">Draft</span
+							>
 						{/if}
 					</td>
 					<td class="px-4 py-3 text-right text-sm">

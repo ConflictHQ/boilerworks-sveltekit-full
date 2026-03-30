@@ -46,7 +46,16 @@ export const actions: Actions = {
 		try {
 			await db
 				.update(items)
-				.set({ name, slug, description, price, categoryId, isPublished, updatedAt: new Date(), updatedBy: user.id })
+				.set({
+					name,
+					slug,
+					description,
+					price,
+					categoryId,
+					isPublished,
+					updatedAt: new Date(),
+					updatedBy: user.id
+				})
 				.where(eq(items.id, params.id));
 
 			throw redirect(303, `/items/${params.id}`);
