@@ -48,7 +48,7 @@
 		"@node-rs/argon2": "^2.0.2",
 		"@sveltejs/adapter-cloudflare": "^7.2.8",
 		"drizzle-orm": "^0.45.2",
-		"postgres": "^3.4.8",
+		"postgres": "^3.4.9",
 		"zod": "^4.3.6"
 	}
 }
