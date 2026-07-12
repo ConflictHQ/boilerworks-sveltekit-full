@@ -23,8 +23,11 @@
 # Install dependencies
 npm install
 
+# Create your local env file (sets DATABASE_URL)
+cp .env.example .env
+
 # Start PostgreSQL via Docker
-cd docker && docker compose up -d && cd ..
+cd docker && docker compose up -d db && cd ..
 
 # Push schema to database
 npm run db:push
@@ -36,7 +39,7 @@ npm run db:seed
 npm run dev
 ```
 
-Open http://localhost:3000 and sign in:
+Open http://localhost:5173 and sign in (port 3000 is used only by the Docker app container, `make up`):
 
 | Account           | Email                 | Password |
 | ----------------- | --------------------- | -------- |
@@ -60,7 +63,7 @@ Open http://localhost:3000 and sign in:
 ## Architecture
 
 ```
-SvelteKit (Node.js / adapter-node)
+SvelteKit (adapter-cloudflare)
   |-- src/routes/       SSR pages + API routes
   |-- src/lib/server/   Auth, DB, permissions, forms, workflow
   |-- Drizzle ORM       PostgreSQL via postgres.js

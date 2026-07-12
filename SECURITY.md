@@ -25,9 +25,9 @@ We will acknowledge your report within 48 hours and aim to release a fix within 
 
 When deploying Boilerworks:
 
-- Change all default credentials (database, MinIO, session secret)
-- Use HTTPS in production
+- Change the default database credentials (`boilerworks`/`boilerworks` in `docker/docker-compose.yml` and `.env.example`)
+- Remove or change the seeded demo accounts (`admin@boilerworks.dev`, `demo@boilerworks.dev`)
+- Keep `DATABASE_URL` out of version control — `.env` is gitignored; never commit real credentials
+- Use HTTPS in production (session cookies are httpOnly; serve them over TLS only)
 - Set `NODE_ENV=production`
-- Configure `CORS_ORIGINS` to your domain only
-- Use strong Auth0 credentials
-- Review the security hardening in `bootstrap.md`
+- Do not expose PostgreSQL publicly — restrict it to the app network
